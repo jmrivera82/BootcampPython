@@ -1,0 +1,41 @@
+
+
+/* index.html */
+
+h1.titulo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    padding: 2%;
+    text-align: center;
+}
+
+p.texto-2{
+    font-style: italic;
+}
+
+
+
+
+
+
+/* experiencia.html */
+
+.titulo-exp{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+.tabla-exp {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    text-align: center;
+    width: 200px;
+    border-color: blue;
+  }
+
+  .cabecera-exp{
+    text-align: center;
+    font-size: 20px;
+    
+  }
