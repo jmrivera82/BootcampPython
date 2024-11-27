@@ -1,0 +1,118 @@
+/*Css Reset*/
+
+html, body{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    color: whitesmoke;
+    background-color:teal ;
+    height: 100%;
+
+}
+/* Codigo CSS aplicado en index*/
+
+
+.contenedor{
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 2%;
+    padding: 2%;
+    
+}
+
+.datos {
+    flex: 1;
+}
+
+.texto {
+    flex: 2;
+    font-size: 16px;
+    line-height: 1.6;
+    border-style: solid;
+    border-color: black;
+    padding:2%;
+    text-align: center;
+}
+
+
+
+
+
+/* Codigo CSS aplicado en formulario de contacto */
+
+
+.contenedor_formulario{
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 2%;
+    padding: 2%;
+    
+}
+
+.datos_formulario{
+    
+    flex:2;
+}
+
+.datos2{
+    flex:1;
+
+}
+
+
+/* Codigo CSS aplicado en experiencia */
+
+
+/*
+.contenedor_experiencia{
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 2%;
+    padding: 2%;
+    justify-content: space-between;
+    
+}
+    */
+
+  
+.datos_experiencia{
+    flex:2;
+    height: 100vh; 
+    overflow-y: auto; 
+}
+
+.datos_proyectos{
+    flex:2;
+    height: 100vh; 
+    overflow-y: auto; 
+}
+/*
+.datos3{
+    flex:1;
+}
+
+*/
+
+@media (max-width:1116px){
+    h1{
+        font-size: 30px;
+    }
+    h2{
+        font-size: 20px;
+    }
+    }
+
+@media (max-width:856px){
+    h1{
+        font-size: 24px;
+        text-align: center;
+    }
+    h2{
+        font-size: 18px;
+        color:black;
+        text-align: center;
+    }
+    }
