@@ -1,0 +1,4 @@
+25-11 trabajando en modulo6 preparación proyecto, venv
+27-11 trabajando en modulo6 parte 1
+29-11 trabajando en modulo4 parte 1
+30-11 revision clase django, creacion de login basado en funciones
