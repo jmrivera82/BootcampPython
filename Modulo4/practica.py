@@ -15,12 +15,14 @@ class Automovil:
         self.velocidad=velocidad
         self.cilindrada=cilindrada
 
+    def ingresar_automovil():
+        marca=input(f"Ingrese Marca: ")
+        modelo=input(f"Ingrese Modelo: ")
+        numeroDeRuedas=input(f"Ingrese Numero de ruedas: ")
+        velocidad=input(f"Ingrese velocidad: ")
+        cilindrada=input(f"Ingrese cilindrada: ")
+        return marca,modelo,numeroDeRuedas,velocidad,cilindrada
 
-
-    def imprimirAutomovil(self):
+    def imprimir_automovil(self):
         return f"Datos del automovil: Marca: {self.marca}, Modelo: {self.modelo}"
 
-#PROGRAMA
-#automovil1=Automovil() 
-#automovil1.ingresarAutomovil() 
-#print(automovil1.imprimirAutomovil())
