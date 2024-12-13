@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% bootstrap_messages %}    
+    {% load static %}
+    <link href="{% static 'vehiculo/css/styles.css' %}" rel="stylesheet">
+    <title>{% block title %} Venta virtual de vehiculos {% endblock title %} </title>
+</head>
+<body>
+
+    <!-- PARTE 3 -- NAVBAR BOOTSTRAP -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    {%block nav%}
+
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              <a class="nav-link" href="#">Características</a>
+              <a class="nav-link" href="#">Precios</a>
+              <a class="nav-link disabled">Deshabilitado</a>
+            </div>
+          </div>
+        </div>
+    {%endblock nav%}
+    </nav>
+
+    <header> {%block header %}{%endblock header %} </header>
+    <main> {%block main %}{%endblock main %} </main>
+    <footer> {%block footer %}Práctica de consolidación 6 - José Miguel Rivera  {% endblock footer %} </footer>
+</body>
+</html>

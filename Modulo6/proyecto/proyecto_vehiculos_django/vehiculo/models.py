@@ -3,8 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Vehiculo(models.Model):
-    pass
-    #revisar choices para marca y categoria
+    #Parte 1 práctica de consolidación
 
     MARCA_CHOICES=[
         ('FIAT','Fiat'),
