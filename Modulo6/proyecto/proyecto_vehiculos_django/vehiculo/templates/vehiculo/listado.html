@@ -1,0 +1,27 @@
+{% extends "./layout.html" %}
+
+{% block header %}
+<h1> Listado de Vehiculos </h1>
+{% endblock header %}
+
+{% block main %}
+
+    <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+        </tr>
+    </thead>
+
+    {% for vehiculo in vehiculos %}
+
+    <tbody>
+        <tr>
+            <td>{{ vehiculo.marca }}</td>
+            <td>{{ vehiculo.modelo }}</td>
+        </tr>
+    </tbody>
+        
+    {% endfor %}
+
+{% endblock main %}

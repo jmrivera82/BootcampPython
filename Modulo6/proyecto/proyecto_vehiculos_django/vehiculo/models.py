@@ -27,3 +27,6 @@ class Vehiculo(models.Model):
     precio=models.IntegerField()
     fecha_de_creacion=models.DateField()
     fecha_de_modificacion=models.DateField()
+
+def __str__(self):
+    return f"{self.marca} {self.modelo}"
