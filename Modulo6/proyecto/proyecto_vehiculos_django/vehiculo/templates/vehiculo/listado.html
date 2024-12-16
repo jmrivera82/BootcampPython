@@ -6,22 +6,25 @@
 
 {% block main %}
 
+<!--Se aplciará clase de bootstrap para completar y listar la tabla con un formato y bordes-->
+<table> 
     <thead>
         <tr>
             <th>Marca</th>
             <th>Modelo</th>
         </tr>
     </thead>
+    <tbody>
 
     {% for vehiculo in vehiculos %}
 
-    <tbody>
         <tr>
             <td>{{ vehiculo.marca }}</td>
             <td>{{ vehiculo.modelo }}</td>
         </tr>
-    </tbody>
         
     {% endfor %}
+    </tbody>
+</table>
 
 {% endblock main %}

@@ -20,7 +20,18 @@ def vehiculo_add(request):
      if request.method == 'POST':
           auto = VehiculoForm(request.POST)
           if auto.is_valid():
-               registro = auto.cleaned_data
+               registro =Vehiculo(
+                    marca=auto.cleaned_data['marca'],
+                    modelo=auto.cleaned_data['modelo'],
+                    serial_carroceria=auto.cleaned_data['serial_carroceria'],
+                    serial_motor=auto.cleaned_data['serial_motor'],
+                    categoria=auto.cleaned_data['categoria'],
+                    precio=auto.cleaned_data['precio'],
+                    fecha_de_creacion=auto.cleaned_data['fecha_de_creacion'],
+                    fecha_de_modificacion=auto.cleaned_data['fecha_de_modificacion'],
+               ) 
+               
+               registro.save()
                return render(request,"vehiculo/datos_ingresados.html", {"registro":registro})
      else:
           auto = VehiculoForm()
