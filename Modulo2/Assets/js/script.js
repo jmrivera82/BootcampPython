@@ -3,27 +3,27 @@
 
 // index.html
 
-const texto1 = document.getElementById('texto-1')
+const texto1 = document.getElementById('texto')
 
-const texto3 = document.getElementById('texto-3')
+const texto3 = document.getElementById('datos')
 
 console.log("prueba de carga del script")
 
 
 texto1.addEventListener('mouseover', function() {
-    texto1.style.color = 'red'
+    texto1.style.color = '#9dc9c1e7'
 })
 
 texto1.addEventListener('mouseout', function() {
-    texto1.style.color = 'black'
+    texto1.style.color = 'whitesmoke'
 })
 
 texto3.addEventListener('mouseover', function() {
-    texto3.style.color = 'red'
+    texto3.style.color = '#9dc9c1e7'
 })
 
 texto3.addEventListener('mouseout', function() {
-    texto3.style.color = 'black'
+    texto3.style.color = 'whitesmoke'
 })
 
 
