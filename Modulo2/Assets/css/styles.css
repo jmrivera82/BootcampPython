@@ -60,23 +60,6 @@ html, body{
     flex:1;
 
 }
-
-
-/* Codigo CSS aplicado en experiencia */
-
-
-/*
-.contenedor_experiencia{
-    display: flex;
-    max-width: 1200px;
-    width: 100%;
-    gap: 2%;
-    padding: 2%;
-    justify-content: space-between;
-    
-}
-    */
-
   
 .datos_experiencia{
     flex:2;
@@ -89,12 +72,8 @@ html, body{
     height: 100vh; 
     overflow-y: auto; 
 }
-/*
-.datos3{
-    flex:1;
-}
 
-*/
+/*Media queries cambiando de tamaño los titulos h1 y h2*/
 
 @media (max-width:1116px){
     h1{
