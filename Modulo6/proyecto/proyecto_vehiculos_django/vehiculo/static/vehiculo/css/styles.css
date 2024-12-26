@@ -24,3 +24,8 @@ form{
     width: 400px;
 }
 
+.tabla_listado td{
+    width:100%;
+    margin:20px;   
+    border: 1px;
+}
