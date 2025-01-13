@@ -1,4 +1,6 @@
 
+#Parte 1: diseño de las clases Vehículo y Automóvil
+
 class Vehiculo:
 
     def __init__(self, marca, modelo, numero_de_ruedas):
@@ -6,14 +8,18 @@ class Vehiculo:
         self.modelo=modelo
         self.numero_de_ruedas=numero_de_ruedas
 
-class Automovil:
-
-    def __init__(self,marca,modelo,numero_de_ruedas,velocidad,cilindrada):
-        self.marca=marca
-        self.modelo=modelo
-        self.numero_de_ruedas=numero_de_ruedas
+class Automovil(Vehiculo):
+    def __init__(self, marca, modelo, numero_de_ruedas,velocidad,cilindrada):
+        super().__init__(marca, modelo, numero_de_ruedas)
         self.velocidad=velocidad
         self.cilindrada=cilindrada
+
+    #def __init__(self,marca,modelo,numero_de_ruedas,velocidad,cilindrada):
+    #    self.marca=marca
+    #    self.modelo=modelo
+    #    self.numero_de_ruedas=numero_de_ruedas
+    #    self.velocidad=velocidad
+    #   self.cilindrada=cilindrada
 
     def ingresar_automovil():
         marca=input(f"Ingrese Marca: ")
@@ -22,11 +28,19 @@ class Automovil:
         velocidad=input(f"Ingrese velocidad en km/h: ")
         cilindrada=input(f"Ingrese cilindrada en cc : ")
         return marca,modelo,numero_de_ruedas,velocidad,cilindrada
-
+        #print(f"Datos del automovil: Marca {self.marca}, Modelo {self.modelo}, {self.numero_de_ruedas} Ruedas, {self.velocidad} Km/h, {self.cilindrada} cc")
+    
+    
+    def __str__ (self):
+        return f"{self.marca}, {self.modelo}, {self.numero_de_ruedas}, {self.velocidad}, {self.cilindrada}"
+    
     def imprimir_automovil(self):
         print(f"Datos del automovil: Marca {self.marca}, Modelo {self.modelo}, {self.numero_de_ruedas} Ruedas, {self.velocidad} Km/h, {self.cilindrada} cc")
 
 
+    ingresar_automovil()
+    imprimir_automovil()
+    
 #prueba instanciando la clase Automovil
 
 #automovil1=Automovil("aa","bb",4,180,50)
