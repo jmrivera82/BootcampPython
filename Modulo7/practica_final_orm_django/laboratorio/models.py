@@ -5,6 +5,8 @@ from datetime import date
 # Create your models here.
 class Laboratorio(models.Model):
     nombre=models.CharField(max_length=255)
+    ciudad=models.CharField(max_length=50, default='Santiago')
+    pais=models.CharField(max_length=50, default='Chile')
 
     def __str__(self):
         return f"{self.nombre}"
@@ -16,7 +18,8 @@ class Laboratorio(models.Model):
 class DirectorGeneral(models.Model):
     nombre=models.CharField(max_length=255)
     laboratorio=models.OneToOneField(Laboratorio,on_delete=models.CASCADE,related_name='director_general')     
-    
+    especialidad=models.CharField(max_length=100, default='Sin asignar')
+
     def __str__(self):
         return f"Nombre:{self.nombre}"
     
@@ -35,3 +38,11 @@ class Producto(models.Model):
 
     class Meta:
         db_table='productos'
+
+
+class Visitas(models.Model):
+    pagina=models.CharField(max_length=255)
+    contador=models.IntegerField()
+
+    def __str__(self):
+        return f"{self.contador} visitas"

@@ -1,0 +1,30 @@
+{% extends "./layout.html" %}
+
+{% block header %}
+
+<h1>Practica de Consolidación 7</h1>
+
+<h2>José Rivera</h2>
+
+<h3>Bootcamp Python 72</h3>
+
+<p>-------------------------------------------------</p>
+
+{% endblock header %}
+
+{% block main %}
+
+<h2>Opciones</h2>
+<p>
+    <a href="{% url 'ingresar' %}">Ingresar Laboratorio</a>
+</p>
+
+<p>
+    <a href="{% url 'listar' %}">Ver Listado</a>
+</p>
+
+<p>
+    <a href="{% url 'index' %}">Inicio</a>
+</p>
+
+{% endblock main %}

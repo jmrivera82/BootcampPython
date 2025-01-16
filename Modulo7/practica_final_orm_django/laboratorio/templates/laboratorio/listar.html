@@ -1,0 +1,60 @@
+{% extends "./layout.html" %}
+
+{% block header %}
+
+<h1>Información de los laboratorios</h1>
+
+{% endblock header %}
+
+{% block main %}
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Ciudad</th>
+                <th>País</th>
+
+                <th>Edit</th>    
+                <th>Delete</th>    
+            </tr>
+        </thead>
+        <tbody>
+            {%for labo in laboratorio%}
+            <tr>
+                <td> {{labo.id}}  </td>
+                <td> {{labo.nombre}}  </td>
+                <td> {{labo.ciudad}}  </td>
+                <td> {{labo.pais}}  </td>
+  
+                <td> 
+                    <a href="/actualizar/{{labo.pk}}">Actualizar</a>        
+                </td>
+                <td> 
+                    <a href="/eliminar/{{labo.pk}}">Eliminar</a>        
+                </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>    
+
+    <br><br>
+    <div class="alert alert-danger" role="alert">
+        Información de los Laboratorios?
+    </div>
+    <p>
+        <a href="{% url 'ingresar' %}">Ingresar</a>
+    </p>
+
+    <p>
+        <a href="{% url 'index' %}">Inicio</a>
+    </p>
+
+    <p>
+        Usted ha visitado esta página {{ registro }} veces.</p>
+
+    </p>
+    
+{% endblock main %}

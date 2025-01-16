@@ -1,0 +1,39 @@
+{% extends "./layout.html" %}
+
+{% block header %}
+
+<h1>Eliminar Laboratorio</h1>
+
+{% endblock header %}
+
+{% block main %}
+
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <br><br>
+    <div class="alert alert-danger" role="alert">
+    Estas seguro que deseas eliminar el "{{laboratorio.nombre}}"?
+    </div>
+
+        <p>
+            <input class="btn btn-danger" type="submit" value="Confirmar">
+        </p>
+
+        <p>
+            <a href="{% url 'listar' %}">atrás</a>
+        </p>
+        
+</form>
+
+    <br><br>
+    <p>
+        <a href="{% url 'ingresar' %}">Ingresar</a>
+    </p>
+
+    <p>
+        <a href="{% url 'index' %}">Inicio</a>
+    </p>
+
+    
+{% endblock main %}
