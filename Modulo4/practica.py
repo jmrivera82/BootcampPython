@@ -1,3 +1,4 @@
+import csv
 #Parte 1: diseño de las clases Vehículo y Automóvil
 
 class Vehiculo:
@@ -12,6 +13,7 @@ class Vehiculo:
 
     def imprimir_vehiculo(self):
         print(f"Marca: {self.marca}\nModelo: {self.modelo}\nNumero de ruedas: {self.numero_de_ruedas}")
+
 
 class Automovil(Vehiculo):
 
@@ -69,6 +71,7 @@ class Particular(Automovil,Vehiculo):  #El ejercicio indica como se debe llamar 
     def __str__(self):
         return super().__str__()+f"\nNumero de puesto: {self.numero_de_puesto}"
     
+    
 class Carga(Automovil,Vehiculo): #El ejercicio indica como se debe llamar la clase al mostrar el código de la instancia
     def __init__(self, marca, modelo, numero_de_ruedas, velocidad, cilindrada, carga):
         super().__init__(marca, modelo, numero_de_ruedas, velocidad, cilindrada)
@@ -76,6 +79,7 @@ class Carga(Automovil,Vehiculo): #El ejercicio indica como se debe llamar la cla
 
     def __str__(self):
         return super().__str__()+f"\nCarga: {self.carga}"
+    
 
 class Bicicleta(Vehiculo): #El ejercicio indica como se debe llamar la clase al mostrar el código de la instancia
     
@@ -86,6 +90,8 @@ class Bicicleta(Vehiculo): #El ejercicio indica como se debe llamar la clase al 
     def __str__(self):
         return super().__str__()+f"\nTipo: {self.tipo_bicicleta}"
     
+
+    
 class Motocicleta(Bicicleta): #El ejercicio indica como se debe llamar la clase al mostrar el código de la instancia
     def __init__(self, marca, modelo, numero_de_ruedas, tipo_bicicleta,nro_radios,cuadro,motor):
         super().__init__(marca, modelo, numero_de_ruedas, tipo_bicicleta)
@@ -95,4 +101,6 @@ class Motocicleta(Bicicleta): #El ejercicio indica como se debe llamar la clase 
 
     def __str__(self):
         return super().__str__()+f"\nNro radios: {self.nro_radios} - motor: {self.motor}"
+
+
 
