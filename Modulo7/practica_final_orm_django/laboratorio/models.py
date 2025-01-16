@@ -42,7 +42,7 @@ class Producto(models.Model):
 
 class Visitas(models.Model):
     pagina=models.CharField(max_length=255)
-    contador=models.IntegerField()
+    contador=models.IntegerField(default=0)
 
     def __str__(self):
         return f"{self.contador} visitas"

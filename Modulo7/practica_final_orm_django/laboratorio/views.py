@@ -28,10 +28,30 @@ def ingresar(request):
 def listar(request):
 
     laboratorio=Laboratorio.objects.all()
-
     return render(request,'laboratorio/listar.html',{'laboratorio':laboratorio})
 
+    #Agregar un contador para la vista listar
 
+    #pagina='listar'
+    #cuenta, creado = Visitas.objects.get_or_create(pagina=pagina)
+
+    #if creado:
+    #    print("Se creó un nuevo registro para la página.")
+    #else:
+    #    print("Se encontró un registro existente para la página.")
+
+
+    #cuenta.contador+=1
+    #cuenta.save()
+
+    #laboratorio=Laboratorio.objects.all()
+
+    #context = {
+    #    'laboratorios': laboratorio,
+    #    'contador': cuenta.contador,
+    #}
+
+    #return render(request,'laboratorio/listar.html',context)
 
 def actualizar(request,pk):
     laboratorio= Laboratorio.objects.get(id=pk)
