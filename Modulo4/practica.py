@@ -46,11 +46,11 @@ class Automovil(Vehiculo):
                         auto=Automovil(marca,modelo,numero_de_ruedas,velocidad,cilindrada)
 
                         automoviles[id]=auto
-                        print("**************************************")
+                        print("*"*40)
                         print("Imprimiendo por pantalla los vehículos\n")
                         for clave,valor in automoviles.items():
                             print(f"Datos del automóvil:{clave}\n{valor}\n")
-                        print("**************************************")
+                        print("*"*40)
 
                     return automoviles
 
@@ -60,7 +60,7 @@ class Automovil(Vehiculo):
             except ValueError:
                 print("Debe ingresar un número")     
 
-class Automovil_tipo_particular(Automovil,Vehiculo):
+class Particular(Automovil,Vehiculo):  #El ejercicio indica como se debe llamar la clase al mostrar el código de la instancia
     
     def __init__(self, marca, modelo, numero_de_ruedas, velocidad, cilindrada,numero_de_puesto):
         super().__init__(marca, modelo, numero_de_ruedas, velocidad, cilindrada)
@@ -69,7 +69,7 @@ class Automovil_tipo_particular(Automovil,Vehiculo):
     def __str__(self):
         return super().__str__()+f"\nNumero de puesto: {self.numero_de_puesto}"
     
-class Automovil_tipo_carga(Automovil,Vehiculo):
+class Carga(Automovil,Vehiculo): #El ejercicio indica como se debe llamar la clase al mostrar el código de la instancia
     def __init__(self, marca, modelo, numero_de_ruedas, velocidad, cilindrada, carga):
         super().__init__(marca, modelo, numero_de_ruedas, velocidad, cilindrada)
         self.carga=carga
@@ -77,7 +77,7 @@ class Automovil_tipo_carga(Automovil,Vehiculo):
     def __str__(self):
         return super().__str__()+f"\nCarga: {self.carga}"
 
-class Bicicleta(Vehiculo):
+class Bicicleta(Vehiculo): #El ejercicio indica como se debe llamar la clase al mostrar el código de la instancia
     
     def __init__(self, marca, modelo, numero_de_ruedas,tipo_bicicleta ):
         super().__init__(marca, modelo, numero_de_ruedas)
@@ -86,7 +86,13 @@ class Bicicleta(Vehiculo):
     def __str__(self):
         return super().__str__()+f"\nTipo: {self.tipo_bicicleta}"
     
-class Motocicleta(Bicicleta):
-    def __init__(self, marca, modelo, numero_de_ruedas, tipo_bicicleta):
+class Motocicleta(Bicicleta): #El ejercicio indica como se debe llamar la clase al mostrar el código de la instancia
+    def __init__(self, marca, modelo, numero_de_ruedas, tipo_bicicleta,nro_radios,cuadro,motor):
         super().__init__(marca, modelo, numero_de_ruedas, tipo_bicicleta)
+        self.nro_radios=nro_radios
+        self.cuadro=cuadro
+        self.motor=motor
+
+    def __str__(self):
+        return super().__str__()+f"\nNro radios: {self.nro_radios} - motor: {self.motor}"
 
