@@ -1,7 +1,4 @@
-
 CREATE DATABASE dvdrental;
-
-/*1. Creación de la tabla customer*/
 
 CREATE TABLE customer (
     customer_id SERIAL PRIMARY KEY,
@@ -18,9 +15,6 @@ CREATE TABLE customer (
 
 ALTER TABLE customer ALTER COLUMN activebool SET DEFAULT TRUE; 
 
-
-/*2.- Creación de la tabla actor*/
-
 CREATE TABLE actor (
     actor_id SERIAL PRIMARY KEY,
     first_name VARCHAR(45) NOT NULL,
@@ -28,7 +22,6 @@ CREATE TABLE actor (
     last_update DATE DEFAULT now()
 );
 
-/*3.- Creación de tabla categoría*/
 
 CREATE TABLE category (
     category_id SERIAL PRIMARY KEY,
@@ -36,7 +29,6 @@ CREATE TABLE category (
     last_update DATE DEFAULT now()
 );
 
-/*4.- Creación de tabla film */
 
 CREATE TABLE film (
     film_id SERIAL PRIMARY KEY,
@@ -54,7 +46,6 @@ CREATE TABLE film (
     fulltext_film VARCHAR(45) 
 );
 
-/*5.- Creación de tabla film actor */
 
 CREATE TABLE film_actor (
     actor_id INTEGER NOT NULL, 
@@ -62,7 +53,7 @@ CREATE TABLE film_actor (
     last_update DATE DEFAULT now()
 );
 
-/*6.-Creación de tabla film_category */
+
 
 CREATE TABLE film_category (
     film_id INTEGER NOT NULL, /*PK tabla film*/
@@ -70,7 +61,6 @@ CREATE TABLE film_category (
     last_update DATE DEFAULT now()
 );
 
-/*7.- Creación de tabla adress */
 
 CREATE TABLE address (
     address_id SERIAL PRIMARY KEY,
@@ -83,7 +73,7 @@ CREATE TABLE address (
     last_update DATE DEFAULT now()
 );
 
-/*8.- Creación de tabla city */
+
 
 CREATE TABLE city (
     city_id INTEGER PRIMARY KEY,
@@ -93,15 +83,12 @@ CREATE TABLE city (
 );
 
 
-/*9.- Creación de tabla country */
-
 CREATE TABLE country (
     country_id SERIAL PRIMARY KEY,
     country VARCHAR(45) NOT NULL,
     last_update DATE DEFAULT now()
 );
 
-/*10.-Creación de tabla inventory*/
 
 CREATE TABLE inventory (
     inventory_id SERIAL PRIMARY KEY,
@@ -110,7 +97,6 @@ CREATE TABLE inventory (
     last_update DATE DEFAULT now()
 );
 
-/*11.- Creación de tabla language*/
 
 CREATE TABLE language (
     language_id SERIAL PRIMARY KEY,
@@ -118,7 +104,7 @@ CREATE TABLE language (
     last_update DATE DEFAULT now()
 );
 
-/*12.- Creación de tabla payment*/
+
 
 CREATE TABLE payment (
     payment_id INTEGER PRIMARY KEY,
@@ -130,8 +116,6 @@ CREATE TABLE payment (
 );
 
 
-/*13.- Creación de tabla rental*/
-
 CREATE TABLE rental (
     rental_id INTEGER PRIMARY KEY,
     rental_date DATE NOT NULL,
@@ -141,9 +125,6 @@ CREATE TABLE rental (
     staff_id INTEGER NOT NULL,
     last_update DATE DEFAULT Now()
 );
-
-
-/*14.- Creación de tabla staff*/
 
 CREATE TABLE staff (
     staff_id SERIAL PRIMARY KEY,
@@ -158,19 +139,12 @@ CREATE TABLE staff (
     last_update DATE DEFAULT now()
 );
 
-
-/*15.- Creación de tabla store*/
-
 CREATE TABLE store (
     store_id SERIAL PRIMARY KEY,
     manager_staff_id INTEGER NOT NULL,
     address_id INTEGER NOT NULL,
     last_update DATE DEFAULT now()
 );
-
-
-/*LLAVES FORANEAS*/
-
 
 ALTER TABLE customer ADD CONSTRAINT customer_address_id_fk FOREIGN KEY (address_id) REFERENCES address(address_id);
 
@@ -208,7 +182,6 @@ ALTER TABLE film_actor ADD CONSTRAINT film_actor_actor_id_fk FOREIGN KEY (actor_
 
 ALTER TABLE film ADD CONSTRAINT film_language_id_fk FOREIGN KEY (language_id) REFERENCES language(language_id);
 
-/* INSERT DE DATOS*/
 
 INSERT INTO customer (store_id,first_name,last_name,email,address_id,activebool,create_update,last_update,active) VALUES (1,'Mary','Smith','mary.smith@sakilacustomer.org',1,'True','2006-02-14','2013-05-26',1);
 INSERT INTO customer (store_id,first_name,last_name,email,address_id,activebool,create_update,last_update,active) VALUES (1,'Patricia','Johnson','patricia.johnson@sakilacustomer.org',2,'True','2006-02-14','2013-05-26',1);
@@ -284,11 +257,13 @@ INSERT INTO address (address,address2,district,city_id,postal_code,phone,last_up
 INSERT INTO address (address,address2,district,city_id,postal_code,phone,last_update) VALUES ('28 MySQL Boulevard','28 MySQL Boulevard','QLD',576,35200,'11111111112','2006-02-15');
 INSERT INTO address (address,address2,district,city_id,postal_code,phone,last_update) VALUES ('23 Workhaven Lane','23 Workhaven Lane','Alberta',300,35200,'14033335568','2006-02-15');
 INSERT INTO address (address,address2,district,city_id,postal_code,phone,last_update) VALUES ('1411 Lillydale Drive','1411 Lillydale Drive','QLD',576,35200,'6172235589','2006-02-15');
-INSERT INTO address (address,address2,district,city_id,postal_code,phone,last_update) VALUES ('1913 Hanoi Way','1913 Hanoi Way','Nagasaki',463,35200,'28303384290','2006-02-15');
+INSERT INTO address (address,address2,district,city_id,postal_code,phone,last_update) VALUES ('333 Hanoi Way','1913 Hanoi Way','Nagasaki',463,35200,'28303384290','2006-02-15');
+INSERT INTO address (address,address2,district,city_id,postal_code,phone,last_update) VALUES ('222 Hanoi Way','1914 Hanoi Way','Chayna',463,35200,'28303384290','2006-02-15');
+INSERT INTO address (address,address2,district,city_id,postal_code,phone,last_update) VALUES ('11 Hanoi Way','1915 Hanoi Way','Tokio',463,35200,'28303384290','2006-02-15');
 
-INSERT INTO city (city_id,city, country_id,last_update) VALUES (463,'Sasebo',50,'2006-02-15');
-INSERT INTO city (city_id,city, country_id,last_update) VALUES (300,'Lethbridge',20,'2006-02-15');
-INSERT INTO city (city_id,city, country_id,last_update) VALUES (576,'Woodridge',8,'2006-02-15');
+INSERT INTO city (city_id,city, country_id,last_update) VALUES (463,'Sasebo',1,'2006-02-15');
+INSERT INTO city (city_id,city, country_id,last_update) VALUES (300,'Lethbridge',2,'2006-02-15');
+INSERT INTO city (city_id,city, country_id,last_update) VALUES (576,'Woodridge',3,'2006-02-15');
 
 INSERT INTO country (country,last_update) VALUES ('Chile','2006-02-15');
 INSERT INTO country (country,last_update) VALUES ('Argentina','2006-02-15');
