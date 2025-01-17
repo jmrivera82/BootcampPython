@@ -46,6 +46,10 @@ body {
     text-align: center;
 }
 
+.table tbody {
+    color: white !important;
+}
+
 .contenido {
     width: 80%; 
     max-width: 800px;
