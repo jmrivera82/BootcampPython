@@ -1,0 +1,17 @@
+{% extends "./layout.html" %}
+
+{% block header %}
+<h1 class="registro"> Formulario de registro de vehículos</h1>
+{% endblock header %}
+
+{% block main %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ auto.as_p }}
+    <button type="submit">REGISTRAR</button>
+</form>
+
+
+
+{% endblock main %}

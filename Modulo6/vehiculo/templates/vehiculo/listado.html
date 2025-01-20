@@ -1,0 +1,53 @@
+{% extends "./layout.html" %}
+
+{% block header %}
+<h1> Listado de Vehiculos </h1>
+{% endblock header %}
+
+{% block main %}
+
+<!--Se aplciará clase de bootstrap para completar y listar la tabla con un formato y bordes-->
+
+{% if vehiculos %}
+
+<table class="table table-bordered border-secondary table-sm table-hover table-striped text-center w-75"> 
+    <thead class="table-light">
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Serial Carrocería</th>
+            <th>Serial Motor</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Condición de precio</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+    {% for vehiculo in vehiculos %}
+
+    <!--Tabla para la lista de vehículos-->
+
+        <tr>
+            <td>{{ vehiculo.marca }}</td>
+            <td>{{ vehiculo.modelo }}</td>
+            <td>{{ vehiculo.serial_carroceria }}</td>
+            <td>{{ vehiculo.serial_motor }}</td>
+            <td>{{ vehiculo.categoria }}</td>
+            <td>{{ vehiculo.precio }}</td>
+            <td>{{ vehiculo.traer_condicion_de_precio }}</td>
+
+        </tr>
+        
+    {% endfor %}
+    </tbody>
+</table>
+
+{% else %}
+
+    <p class="text-center alert">No se han registrado vehículos</p>
+
+{% endif %}
+ 
+{% endblock main %}

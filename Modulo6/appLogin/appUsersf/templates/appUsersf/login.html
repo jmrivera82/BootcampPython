@@ -1,4 +1,0 @@
-{% extends "./layout.html" %}
-{% block title %}Login{% endblock title %}
-{% block main %} <form method="POST"> {% csrf_token %} {{form.as_p}} <button type="submit">INGRESAR</button>
-</form> {% endblock main %}
