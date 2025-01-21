@@ -10,6 +10,7 @@ urlpatterns = [
     path('actualizar/<int:pk>',views.actualizar,name='actualizar'),
     path('actualizar/actualizarLaboratorio/<int:pk>',views.actualizarLaboratorio,name='actualizarLaboratorio'),
     path('eliminar/<int:pk>',views.eliminar,name='eliminar'), 
+    path('laboratorio/test/',views.test,name='test'),
 
 
 
