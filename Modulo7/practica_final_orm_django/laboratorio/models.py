@@ -2,6 +2,9 @@ from django.db import models
 
 from datetime import date
 
+from django.core.validators import MaxValueValidator, MinValueValidator
+
+
 # Create your models here.
 class Laboratorio(models.Model):
     nombre=models.CharField(max_length=255)
@@ -29,7 +32,7 @@ class DirectorGeneral(models.Model):
 class Producto(models.Model):
     nombre=models.CharField(max_length=255)
     laboratorio=models.ForeignKey(Laboratorio,on_delete=models.SET_NULL, blank=True,null=True)     
-    f_fabricacion=models.DateField(default=date(2015,1,1))
+    f_fabricacion=models.DateField(validators=[MinValueValidator(date(2015, 1, 1)), MaxValueValidator(date.today())])
     p_costo=models.DecimalField(max_digits=12,decimal_places=2)
     p_venta=models.DecimalField(max_digits=12,decimal_places=2)
 
