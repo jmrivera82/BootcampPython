@@ -1,0 +1,155 @@
+#SESION 3 Ejercicio
+
+Crear entorno virtual en su carpeta
+python3 -m venv practica_orm_django
+
+***en consola/ terminal
+
+sudo -u postgres psql
+
+create role user_db with login password 'user_db';
+
+alter role user_db with superuser;
+
+create database base_de_datos owner usuario;
+create database proyecto_django owner proyecto_django;
+
+grant all privileges on database proyecto_django to proyecto_django ;
+
+\du lista de usuarios y atributos
+
+***en consola/ terminal
+
+psql -U nuevo_usuario -d nueva_base -h localhost -W
+
+-U nuevo_usuario → Especifica el usuario con el que te conectarás a la base de datos (nuevo_usuario).
+-d nueva_base → Indica la base de datos a la que quieres conectarte (nueva_base).
+-h localhost → Define el host (servidor) donde está PostgreSQL. En este caso, localhost (el mismo equipo).
+-W → Obliga a que se solicite la contraseña del usuario antes de conectarse.
+
+**agregar linea para ingresar con usuario mediante comando psql
+sudo nano  /etc/postgresql/16/main/pg_hba.conf
+
+create database practica_orm;
+
+#en VSC
+
+**ingresar a carpeta del proyecto
+source ../entorno/practica_orm/bin/activate
+
+pip install django 
+pip install wheel
+pip install psycopg2-binary
+
+***preparar requirements
+
+pip install -r requirements.txt 
+
+**pip list
+
+django-admin startproject practica_orm .
+
+**corregir en settings.py:
+
+language_code y time_zone 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'practica_orm',
+        'USER':'user_db',
+        'PASSWORD' : 'user_db',
+        'HOST':'localhost',
+        'PORT': '5432',    
+    }
+}
+
+python3 manage.py migrate
+
+python3 manage.py createsuperuser
+
+python3 manage.py runserver
+
+*****permisos de usuario
+
+>>> from django.contrib.auth.models import User, Permission
+>>> usuario = User.objects.create_user('juanperez', 'juanperez@mail.com','1234')
+>>> usuario.get_all_permissions()
+
+>>> from appLogin.models import Permisos
+from django.contrib.contenttypes.models import ContentType
+>>> content_type = ContentType.objects.get_for_model(Permisos)
+appLogin_permissions = Permission.objects.filter(content_type=content_type)
+
+[p.codename for p in appLogin_permissions]
+salida: ['add_appLoginmodel', 'change_appLoginmodel', 'delete_appLoginmodel', 'view_appLoginmodel']
+
+usuario.has_perm('appLogin.add_appLoginmodel') Salida: false
+
+add_permission = Permission.objects.get(content_type=content_type, codename='add_appLoginmodel')
+
+#Sesión 3 evaluación
+
+django-admin startapp proyecto
+
+Instalar en settings 'proyecto.apps.ProyectoConfig'
+
+Crear modelo proyecto en models.py
+
+python3 manage.py makemigrations
+
+python3 manage.py sqlmigrate productosDelProyecto 0001_initial
+
+python3 manage.py migrate
+
+python manage.py showmigrations proyecto
+
+**Revisar en la shell de postgres
+\c practica_orm (con usuario user_db)
+\dt para ver las relaciones
+select * from practica_orm
+
+#sesion 4 ejercicio
+
+***Agregar campos desde la shell al modelo
+
+python3 manage.py shell
+
+from proyecto.models import Producto
+
+Producto.objects.all()
+
+producto1=Producto(nombre='Coca Cola',precio='3000',descripcion='Bebida 3lts')
+
+producto1.save() ***siempre hacer save de los objetos
+
+Producto.objects.all().values()
+
+productos_list=[producto1,producto2,producto3]
+
+for prod in productos_list:
+    print(prod)
+
+#sesion 4 evaluación
+
+
+
+
+#sesion 5 ejercicio y evaluacion
+
+crear modelos en app relaciones producto, marca, proveedor
+
+en evaluación 5 traer proveedores según id
+
+asignar proveedor a productos segun corresponda
+
+>>> producto1=Producto.objects.create(nombre='Omo suavizante',precio='1500',descripcion='suavizante para la ropa')
+>>> producto1.save()
+>>> proveedor1=Proveedor.objects.get(id=5)
+>>> proveedor1.producto_set.add(producto1,producto2,producto3)
+
+***select en consola postgres
+
+
+
+

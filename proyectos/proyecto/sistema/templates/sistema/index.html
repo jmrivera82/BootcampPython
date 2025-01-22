@@ -1,0 +1,28 @@
+{% extends "./layout.html" %}
+
+
+
+{% block header %}
+
+<h1>Practica Django</h1>
+
+
+{% endblock header %}
+
+{% block main %}
+
+
+<h2>Proyecto Caely</h2>
+
+<h3>Python</h3>
+
+<h2>Opciones</h2>
+
+<ul>
+    <p>
+        <a href="{% url 'appLogin:registro' %}">Registrar usuario</a>
+    </p>
+</ul>
+
+
+{% endblock main %}

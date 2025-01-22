@@ -1,0 +1,27 @@
+<!--
+    <p>
+       <a href="{% url 'ingresar' %}">Ingresar Laboratorio</a>
+    </p>
+    
+    <p>
+        <a href="{% url 'listar' %}">Ver Listado</a>
+    </p>
+    
+    <p>
+        <a href="{% url 'index' %}">Inicio</a>
+    </p>
+    -->
+
+
+
+    *{
+        margin:0;
+        padding:0;
+        height: 100%;
+        scroll-behavior: smooth;
+    
+    }
+
+    <p>
+        <a href="{% url 'login:registro' %}">Registrar usuario</a>
+    </p>

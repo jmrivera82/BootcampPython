@@ -1,0 +1,48 @@
+{% extends "sistema/layout.html" %}
+
+{% block header %}
+
+<h1>Menú productos</h1>
+
+<p>-------------------------------------------------</p>
+
+{% endblock header %}
+
+{% block main %}
+
+<h2>Opciones</h2>
+
+<blockquote>
+
+<h3>PRODUCTOS</h3>
+
+
+<p>
+    <a href="{% url 'productos:ingresar_producto' %}">Ingresar Producto</a>
+</p>
+
+<p>
+    <a href="{% url 'productos:listado_de_productos' %}">Listado de Productos</a>
+</p>
+
+<blockquote>
+
+<h3>PROVEEDORES</h3>
+
+<p>
+    <a href="{% url 'productos:ingresar_proveedor' %}">Ingresar Proveedor</a>
+</p>
+
+<p>
+    <a href="{% url 'productos:listar_proveedor' %}">Ver Listado de proveedores</a>
+</p>
+
+<p>
+    <a href="{% url 'productos:menu' %}">Inicio</a>
+</p>
+
+<blockquote>
+
+    <h3>--otra opción--</h3>
+
+{% endblock main %}

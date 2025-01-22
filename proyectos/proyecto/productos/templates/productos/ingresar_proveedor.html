@@ -1,0 +1,52 @@
+{% extends "sistema/layout.html" %}
+
+{% block header %}
+
+<h1>Ingresar los datos del Proveedor</h1>
+
+{% endblock header %}
+
+{% block main %}
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+
+    <tr>
+        <td>Nombre</td>
+        <td>
+            <input type="text" placeholder="Ingrese el nombre" name="nombre">
+        </td>
+    </tr>
+    <tr>
+        <td>Ciudad</td>
+        <td>
+            <input type="text" placeholder="Ingrese ciudad" name="ciudad">
+        </td>
+    </tr>
+    <tr>
+        <td>País</td>
+        <td>
+            <input type="text" placeholder="Ingrese país" name="pais">
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="2" align="center"><input type="submit" class="btn btn-success"> </td>
+    </tr>
+    </table>
+    <br>
+    <br>
+        <div class="alert alert-danger" role="alert">¿Quiere ver Información de Proveedores?</div>
+    <p>
+        <a href="{% url 'productos:listar_proveedor' %}">Ir a información de los Proveedores</a>
+    </p>
+
+    <p>
+        <a href="{% url 'productos:menu' %}">Menu</a>
+    </p>
+
+</form>
+
+
+{% endblock main %}

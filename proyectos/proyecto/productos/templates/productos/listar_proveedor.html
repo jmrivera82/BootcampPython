@@ -1,0 +1,64 @@
+{% extends "sistema/layout.html" %}
+
+{% block header %}
+
+<h1>Información de los proveedores</h1>
+
+{% endblock header %}
+
+{% block main %}
+
+    <table class="tabla_proveedores">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Ciudad</th>
+                <th>País</th>
+
+                <th>Edit</th>    
+                <th>Delete</th>    
+            </tr>
+        </thead>
+        <tbody>
+            {%for proveedor in proveedores%}
+            <tr>
+                <td> {{proveedor.id}}  </td>
+                <td> {{proveedor.nombre}}  </td>
+                <td> {{proveedor.ciudad}}  </td>
+                <td> {{proveedor.pais}}  </td>
+
+  
+                <td> 
+                    <a href="/actualizar_proveedor/{{proveedor.pk}}">Actualizar</a>        
+                </td>
+                <td> 
+                    <a href="/eliminar_proveedor/{{proveedor.pk}}">Eliminar</a>        
+                </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>    
+
+    <br><br>
+    <div class="alert alert-danger" role="alert">
+        Información de los proveedores?
+    </div>
+    <p>
+        <a href="{% url 'productos:ingresar_proveedor' %}">Ingresar</a>
+    </p>
+
+    <p>
+        <a href="{% url 'productos:menu' %}">Menu</a>
+    </p>
+
+    <p>
+        Usted ha visitado esta página {{ contador }} 
+        {%if contador == 1 %} vez.
+        {%else %} veces.
+        {%endif%}
+    </p>
+
+    </p>
+    
+{% endblock main %}

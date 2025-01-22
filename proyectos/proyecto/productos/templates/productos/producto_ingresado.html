@@ -1,0 +1,18 @@
+{% extends "sistema/layout.html" %}
+
+{% block header %}
+<h1> Datos ingresados correctamente</h1>
+{% endblock header %}
+
+{% block main %}
+
+    <br>
+    <blockquote></blockquote>
+    <h2>Se ha ingresado el siguiente Vehículo</h2>
+        <ul class="listado">
+            <li>Marca: {{ producto.nombre }}</li>
+            <li>Modelo: {{ producto.codigo }}</li>
+            <li>Modelo: {{ producto.proveedor }}</li>
+        </ul>
+
+{% endblock main %}

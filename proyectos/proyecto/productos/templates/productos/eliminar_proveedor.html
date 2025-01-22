@@ -1,0 +1,39 @@
+{% extends "sistema/layout.html" %}
+
+{% block header %}
+
+<h1>Eliminar Proveedor</h1>
+
+{% endblock header %}
+
+{% block main %}
+
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <br><br>
+    <div class="alert alert-danger" role="alert">
+    Estas seguro que deseas eliminar el "{{proveedor.nombre}}"?
+    </div>
+
+        <p>
+            <input class="btn btn-danger" type="submit" value="Confirmar">
+        </p>
+
+        <p>
+            <a href="{% url 'productos:listar_proveedor' %}">atrás</a>
+        </p>
+        
+</form>
+
+    <br><br>
+    <p>
+        <a href="{% url 'productos:ingresar_proveedor' %}">Ingresar</a>
+    </p>
+
+    <p>
+        <a href="{% url 'productos:menu' %}">Menu</a>
+    </p>
+
+    
+{% endblock main %}

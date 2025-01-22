@@ -1,0 +1,53 @@
+{% extends "sistema/layout.html" %}
+
+{% block header %}
+
+<h1>Actualizar Proveedor</h1>
+
+{% endblock header %}
+
+{% block main %}
+
+
+<form action="actualizarProveedor/{{ proveedor.id }}"method="POST">
+    {% csrf_token %}
+    <table>
+
+    <tr>
+        <td>Nombre</td>
+            <td>
+                <input type=" text" value="{{ proveedor.nombre}}" name="nombre">
+            </td>
+    </tr>
+    <tr>
+        <td>Ciudad</td>
+            <td>
+                <input type=" text" value="{{ proveedor.ciudad}}" name="ciudad">
+            </td>
+    </tr>
+    <tr>
+        <td>País</td>
+            <td>
+                <input type=" text" value="{{ proveedor.pais}}" name="pais">
+            </td>
+    </tr>
+
+
+    <tr>
+        <td colspan="2" align="center"><input type="submit" class="btn btn-success"> </td>
+    </tr>
+    </table>
+</form>
+
+
+    <br><br>
+    <p>
+        <a href="{% url 'productos:ingresar_proveedor' %}">Ingresar</a>
+    </p>
+
+    <p>
+        <a href="{% url 'productos:menu' %}">Menu</a>
+    </p>
+
+    
+{% endblock main %}

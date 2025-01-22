@@ -1,0 +1,17 @@
+{% extends "sistema/layout.html" %}
+
+{% block header %}
+<h1 class="registro"> Formulario de registro de productos</h1>
+{% endblock header %}
+
+{% block main %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ prod.as_p }}
+    <button type="submit">REGISTRAR</button>
+</form>
+
+
+
+{% endblock main %}
