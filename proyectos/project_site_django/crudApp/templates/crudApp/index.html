@@ -1,0 +1,26 @@
+{% extends "./layout.html" %}
+
+{% block header %}
+
+<h1>Prueba de CRUD</h1>
+
+{% endblock header %}
+
+{% block main %}
+
+<p>
+    <a href="{% url 'ingresar_emp' %}">Ingresar</a>
+</p>
+
+<p>
+    <a href="{% url 'listar_emp' %}">Listar</a>
+</p>
+
+<p>
+    <a href="{% url 'index' %}">Inicio</a>
+</p>
+
+{% endblock main %}
+
+
+

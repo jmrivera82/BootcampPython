@@ -1,0 +1,34 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    background-color: #4e5a46;
+    color: #f8f9fa;
+    scroll-behavior: auto;
+}
+
+
+form{
+    margin : 10px auto;
+    padding: 10px;
+    width: 400px;
+}
+
+.tabla_listado td{
+    width:100%;
+    margin:20px;   
+    border: 1px;
+}
+
+.registro{
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #4b5a40;
+    color: #faf3f3;
+    align-items: center;
+    text-align: center;
+}

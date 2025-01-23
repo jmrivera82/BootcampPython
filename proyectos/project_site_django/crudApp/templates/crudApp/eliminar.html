@@ -1,0 +1,36 @@
+{% extends "./layout.html" %}
+
+{% block header %}
+
+<h1>Eliminar un empleado</h1>
+
+{% endblock header %}
+
+{% block main %}
+
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <br><br>
+    <div class="alert alert-danger" role="alert">
+    Estas seguro que deseas eliminar al "{{empleado.nombre}}"?
+    </div>
+    <p>
+    <a href="{% url 'listar_emp' %}">atrás</a>
+    </p>
+    <p>
+    <input class="btn btn-danger" type="submit" value="Confirmar">
+    </p>
+</form>
+
+    <br><br>
+    <p>
+        <a href="{% url 'ingresar_emp' %}">Ingresar</a>
+    </p>
+
+    <p>
+        <a href="{% url 'index' %}">Inicio</a>
+    </p>
+
+    
+{% endblock main %}

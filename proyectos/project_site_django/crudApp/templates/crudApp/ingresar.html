@@ -1,0 +1,81 @@
+{% extends "./layout.html" %}
+
+{% block header %}
+
+<h1>Ingresar los datos del empleado</h1>
+
+{% endblock header %}
+
+{% block main %}
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+    <!--
+        <tr>
+        <td>Id del Empleado</td>
+        <td>
+            <input type="text" placeholder="Ingrese el id del Empleado" name="id">
+        </td>
+    </tr>
+    -->
+    <tr>
+        <td>Nombre del Empleado</td>
+        <td>
+            <input type="text" placeholder="Ingrese el nombre del Empleado" name="nombre">
+        </td>
+    </tr>
+    <tr>
+        <td>Correo</td>
+        <td>
+            <input type="email" placeholder="Correo del Empleado" name="correo"> 
+        </td>
+    </tr>
+    <tr>
+        <td>Cargo</td>
+        <td>
+            <select name="cargo">
+            <option selected disabled=true>Seleccione cargo</option>
+            <option> Project Manager </option>
+            <option> Programador </option>
+            <option> Soporte Técnico </option>
+            <option> Desarrollador Web </option>
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Sueldo</td>
+        <td>
+            <input type="number" placeholder="Ingrese Sueldo" name="sueldo"> 
+        </td>
+    </tr>
+    
+    <tr>
+        <td>Fecha de Ingreso</td>
+
+        <td>
+            <input type="date" id="f_ingreso" name="f_ingreso"> 
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="2" align="center"><input type="submit" class="btn btn-success"> </td>
+    </tr>
+    </table>
+    <br>
+    <br>
+        <div class="alert alert-danger" role="alert">¿Quiere ver Información de Empleados?</div>
+    <p>
+        <a href="{% url 'listar_emp' %}">Ir a información de los empleados</a>
+    </p>
+
+    <p>
+        <a href="{% url 'index' %}">Inicio</a>
+    </p>
+
+</form>
+
+
+{% endblock main %}
+

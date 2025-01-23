@@ -1,0 +1,66 @@
+{% extends "./layout.html" %}
+
+{% block header %}
+
+<h1>Actualizar datos del empleado</h1>
+
+{% endblock header %}
+
+{% block main %}
+
+
+<form action="actualizarEmpleado/{{ empleado.id }}"method="POST">
+    {% csrf_token %}
+    <table>
+    <!--
+        <tr>
+        <td>Id empleado</td>
+            <td>
+                <input type="text" value="{{ empleado.id }}" name="id">
+            </td>
+    </tr>
+    -->
+    <tr>
+        <td>Nombre del Empleado</td>
+            <td>
+                <input type=" text" value="{{ empleado.nombre}}" name="nombre">
+            </td>
+    </tr>
+    <tr>
+        <td>Correo</td>
+            <td>
+                <input type="email" value="{{ empleado.correo}}" name="correo"> 
+            </td>
+    </tr>
+    <tr>
+        <td>Cargo</td>
+            <td>
+                <input type="text" value="{{empleado.cargo}}" name="cargo">
+            </td>
+    </tr>
+
+    <tr>
+        <td>Sueldo</td>
+            <td>
+                <input type="text" value="{{empleado.sueldo}}" name="sueldo">
+            </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" align="center"><input type="submit" class="btn btn-success"> </td>
+    </tr>
+    </table>
+</form>
+
+
+    <br><br>
+    <p>
+        <a href="{% url 'ingresar_emp' %}">Ingresar</a>
+    </p>
+
+    <p>
+        <a href="{% url 'index' %}">Inicio</a>
+    </p>
+
+    
+{% endblock main %}

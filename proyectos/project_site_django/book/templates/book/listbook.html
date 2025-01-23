@@ -1,0 +1,17 @@
+
+{% extends "./layout.html" %}
+
+
+<main> {%block main %}
+
+    {%if libros%}
+
+    {% for libro in libros %}
+        <li>Titulo:{{libro.titulo}}, Autor:{{libro.autor}}, Valoración: {{libro.valoracion}} </li>
+    {%endfor%}
+            <br>
+    {%else%}
+    <p>No contiene items</p>
+    {%endif%}
+
+    {%endblock main %} </main>

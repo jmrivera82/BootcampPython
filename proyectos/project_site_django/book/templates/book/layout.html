@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% bootstrap_messages %}    
+    {% load static %}
+    <link href="{% static 'book/css/styles.css' %}" rel="stylesheet">
+    <title>{% block title %} Site Web django {% endblock title %} </title>
+</head>
+<body>
+    <!-- SESION 5 DRILLING NAVBAR BOOTSTRAP -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    {%block nav%}
+
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Site Web Django</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="#">Inicio</a>
+
+              {% if user.is_authenticated %}
+          
+              <a class="nav-link" href="#">Libros</a>
+
+              <a class="nav-link" href="#">Acerca de</a>
+
+              <a class="nav-link" href="#">Contacto</a>
+
+
+              {% endif %}
+
+            </div>
+          </div>
+
+          <div class="d-flex">
+            <ul class="navbar-nav">
+                {% if user.is_authenticated %}
+  
+                    <li class="nav-item">
+                        <span class="nav-link">Hola, {{user.username}}</span>
+                    </li>
+  
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'appLogin:logout' %}">Cerrar sesión</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'appLogin:login' %}">Iniciar sesión</a>
+                    </li>
+                {% endif %}
+            </ul>
+          </div>
+  
+
+
+        </div>
+    {%endblock nav%}
+    </nav>
+
+    <header> {%block header %}{%endblock header %} </header>
+    <main> {%block main %}{%endblock main %} </main>
+
+    {%block footer%}
+        
+    <footer class="footer">
+
+        <p class="empresa">&copy; Proyecto Site Web django Bootcamp Python 0072</p>
+
+    </footer>
+
+    {%endblock footer%}
+
+
+
+</body>
+</html>

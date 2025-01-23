@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    <link href="{% static 'crudApp/css/styles.css' %}" rel="stylesheet">
+
+    <title>{%block title%}PRACTICA DJANGO{%endblock title%}  </title>
+</head>
+<body>
+    
+    <header> {%block header %}{%endblock header %} </header>
+
+
+    <main> {%block main %}{%endblock main %} </main>
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
