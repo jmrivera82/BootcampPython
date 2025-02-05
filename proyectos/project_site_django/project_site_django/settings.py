@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'appLogin.apps.ApploginConfig',
     'crudApp.apps.CrudappConfig',
+    'mensajes.apps.MensajesConfig',
 
 ]
 

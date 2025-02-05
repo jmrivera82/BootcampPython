@@ -1,0 +1,23 @@
+<h2>{{ post.title }}</h2>
+<p>{{ post.content }}</p>
+
+<h3>Comentarios</h3>
+{% for comment in comments %}
+    <div>
+        <strong>{{ comment.user.usuario }}</strong> - {{ comment.fecha|date:"d M Y H:i" }}
+        <p>{{ comment.contenido }}</p>
+    </div>
+{% empty %}
+    <p>No hay comentarios aún.</p>
+{% endfor %}
+
+{% if user.is_authenticated %}
+    <h3>Deja un comentario</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Comentar</button>
+    </form>
+{% else %}
+    <p><a href="{% url 'appLogin:login' %}">Inicia sesión</a> para comentar.</p>
+{% endif %}

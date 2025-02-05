@@ -22,5 +22,6 @@ urlpatterns = [
     path('',include('book.urls')),
     path('',include('appLogin.urls')),
     path('crudApp/',include('crudApp.urls')),
+    path('mensajes/',include('mensajes.urls')),
 
 ]
